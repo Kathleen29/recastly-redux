@@ -1,3 +1,4 @@
+// key is our API key and query is whatever we searched
 var searchYouTube = ({key, query, max = 5}, callback) => {
   $.get('https://www.googleapis.com/youtube/v3/search', {
     part: 'snippet',
