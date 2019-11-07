@@ -9,6 +9,7 @@ var searchYouTube = ({key, query, max = 5}, callback) => {
     videoEmbeddable: 'true'
   })
     .done(({items}) => {
+      console.log('done!'); //! is done() being calledback with serach.js > line 22, searchYouTube(options, (videos) => videos)? using console.log('done!') passes the specRunner.
       if (callback) {
         callback(items);
       }

@@ -1,22 +1,24 @@
+import { connect } from 'react-redux'; //! added; doesn't break the specRunner or the Recast.ly
 import React from 'react';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
+import exampleVideoData from '../data/exampleVideoData';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      videos: [],
-      currentVideo: null
+      videos: exampleVideoData,
+      currentVideo: exampleVideoData[0]
     };
 
     this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
   }
 
   componentDidMount() {
-    this.getYouTubeVideos('react tutorials');
+    this.getYouTubeVideos('cute kittens');
   }
 
   handleVideoListEntryTitleClick(video) {
