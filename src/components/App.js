@@ -5,64 +5,81 @@ import VideoPlayer from './VideoPlayer.js';
 import Search from './Search.js';
 import exampleVideoData from '../data/exampleVideoData';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      videos: exampleVideoData,
-      currentVideo: exampleVideoData[0]
-    };
+  var App = /*extends React.Component*/() => (
+      // constructor(props) {
+      //   super(props);
 
-    this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
-  }
+      //   this.state = {
+      //     videos: exampleVideoData,
+      //     currentVideo: exampleVideoData[0]
+      //   };
 
-  componentDidMount() {
-    this.getYouTubeVideos('cute kittens');
-  }
+      //   this.getYouTubeVideos = this.getYouTubeVideos.bind(this);
+      // }
 
-  handleVideoListEntryTitleClick(video) {
-    this.setState({currentVideo: video});
-  }
+//   componentDidMount() {
+//     this.getYouTubeVideos('cute kittens');
+//   }
 
-  getYouTubeVideos(query) {
-    var options = {
-      key: this.props.API_KEY,
-      query: query
-    };
+//   handleVideoListEntryTitleClick(video) {
+//     this.setState({currentVideo: video});
+//   }
 
-    this.props.searchYouTube(options, (videos) =>
-      this.setState({
-        videos: videos,
-        currentVideo: videos[0]
-      })
-    );
-  }
+//   getYouTubeVideos(query) {
+//     var options = {
+//       key: this.props.API_KEY,
+//       query: query
+//     };
 
-  //TODO: swap out the React components below for the container components
-  //  you wrote in the 'containers' directory.
-  render() {
-    return (
-      <div>
-        <nav className="navbar">
-          <div className="col-md-6 col-md-offset-3">
-            <Search getYouTubeVideos={this.getYouTubeVideos}/>
-          </div>
-        </nav>
-        <div className="row">
-          <div className="col-md-7">
-            <VideoPlayer video={this.state.currentVideo}/>
-          </div>
-          <div className="col-md-5">
-            <VideoList
-              handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
-              videos={this.state.videos}
-            />
-          </div>
-        </div>
+//     this.props.searchYouTube(options, (videos) =>
+//       this.setState({
+//         videos: videos,
+//         currentVideo: videos[0]
+//       })
+//     );
+//   }
+//   }
+//   //TODO: swap out the React components below for the container components
+//   //  you wrote in the 'containers' directory.
+//   render() {
+//     return (
+//       <div>
+//         <nav className="navbar">
+//           <div className="col-md-6 col-md-offset-3">
+//             <Search getYouTubeVideos={this.getYouTubeVideos}/>
+//           </div>
+//         </nav>
+//         <div className="row">
+//           <div className="col-md-7">
+//             <VideoPlayer video={this.state.currentVideo}/>
+//           </div>
+//           <div className="col-md-5">
+//             <VideoList
+//               handleVideoListEntryTitleClick={this.handleVideoListEntryTitleClick.bind(this)}
+//               videos={this.state.videos}
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     );
+//   }
+// })
+  <div>
+    <nav className="navbar">
+      <div className="col-md-6 col-md-offset-3">
+        <Search />
       </div>
-    );
-  }
-}
+    </nav>
+    <div className="row">
+      <div className="col-md-7">
+        <VideoPlayer />
+      </div>
+      <div className="col-md-5">
+        <VideoList />
+      </div>
+    </div>
+  </div>
+)
 
 export default App;

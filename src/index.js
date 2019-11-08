@@ -14,7 +14,7 @@ import { Provider } from 'react-redux'; //added to force Store to be available t
 
 ReactDOM.render(
   <Provider store={Store}>
-  <App API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} />
+  <App /*API_KEY={YOUTUBE_API_KEY} searchYouTube={searchYouTube} *//>
   </Provider>,
   document.getElementById('app')
 
