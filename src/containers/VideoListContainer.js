@@ -20,6 +20,6 @@ var VideoListContainer =
     mapDispatchToProps)(VideoList);
 
 
-//TODO: define a VideoListContainer component which will hook up your action dispatchers with your VideoList component props.
+//DONE: define a VideoListContainer component which will hook up your action dispatchers with your VideoList component props.
 
 export default VideoListContainer;
