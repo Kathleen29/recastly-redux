@@ -23,39 +23,6 @@ var handleVideoSearch = (q) => {
   return (dispatch) => {searchYouTube(options, (videos) => dispatch(changeVideoList(videos)))};
   console.log(videos);
 
-  // console.log(searchYouTube)
-  return (dispatch) => {
-
-    dispatch(changeVideoList(videos),
-    // changeVideo(videos[0])
-
-    );
-    //dispatch(changeVideo(videos[0]))
-
-  }
-
-       return ({
-          type: 'CHANGE_VIDEO',
-          videos: videos
-        });
-
-
-
-
-
-
-        // return  changeVideo(videos)
-
-
-        // var changeVideo = (video) => ({
-
-        //   type: 'CHANGE_VIDEO',
-        //   video: video
-
-        //   //have the changeVideo action to change store.state
-        // });
-
-
 };
 
 
